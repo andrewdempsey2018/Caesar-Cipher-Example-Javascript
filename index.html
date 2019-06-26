@@ -1,0 +1,45 @@
+<html>
+
+<head>
+	<title>Caesar Cipher Example</title>
+    <body>
+		<script>
+
+			//create a string to manipulate
+			var letters = "Open University";
+
+			//the Ceasar shift is a const, this can be edited to test
+			//different Caesar shift values
+			const shift = 1;
+
+			//output the initial state of the string to the screen
+			//<br> HTML tag spaces the output on screen  better
+			document.write(letters + "<br><br>");
+
+			//call the caesar function on the string and output the result
+			document.write(caesar(letters));
+
+			//takes a string as an argument
+			function caesar(aString)
+			{
+				//initialise return variable
+                var newString = "";
+
+				//iterate over the argument string
+				for(var i = 0; i < aString.length; i++)
+				{
+					//build the new string character by character
+					//charCodeAt() returns the unicode value of the character
+					//fromCharCode() takes a unicode value and converts it into the respective string
+					newString += String.fromCharCode(aString.charCodeAt(i) + shift);
+				}
+				
+				//the shifted string is returned to the caller
+				return newString;
+			}
+
+		</script>
+    </body>
+</head>
+
+</html>
